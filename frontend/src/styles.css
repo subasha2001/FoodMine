@@ -8,6 +8,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, a, li{margin: 0;padding: 0;box-sizing: bord
 .jcsb{justify-content: space-between;}
 .jcc{justify-content: center;}
 .aic{align-items: center;}
+.fww{flex-wrap: wrap;}
 .mx-w{
     max-width: 1280px;
     margin: 0 auto;

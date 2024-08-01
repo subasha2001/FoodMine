@@ -1,0 +1,43 @@
+<div class="mx-w df jcc fww aic">
+    <img [src]="food.imageUrl" [alt]="food.name">
+
+    <div class="details df">
+        <div class="header df jcsb aic">
+            <span class="name">
+                {{food.name}}
+            </span>
+            <span class="favorite {{food.favorite? '': 'not'}}">❤</span>
+        </div>
+        <!-- <div class="rating">
+                <star-rating 
+                [value]="food.stars"
+                [totalstars]="5"
+                checkedcolor="red"
+                uncheckedcolor="black"
+                size="25px"
+                [readonly]="true">
+                </star-rating>
+            </div> -->
+        <div class="origins df fww aic">
+            <span *ngFor="let data of food.origins">
+                {{data}}
+            </span>
+        </div>
+        <div class="tags df fww">
+            <a *ngFor="let data of food.tags" routerLink="/tag/{{data}}">
+                {{data}}
+            </a>
+        </div>
+        <div class="cook-time">
+            <span>
+                Time to cook about <strong>{{food.cookTime}}</strong> minutes
+            </span>
+        </div>
+        <div class="price">
+            <span>
+                Rs. {{food.price}}
+            </span>
+        </div>
+        <button (click)="addToCart()" class="cupo">Add To Cart</button>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<div class="df fww jcc" *ngIf="tags">
+    <a *ngFor="let data of tags" routerLink="/tag/{{data.name}}">{{data.name}}({{data.count}})</a>
+</div>

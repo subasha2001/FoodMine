@@ -1,4 +1,5 @@
 import { food } from "./app/shared/models/food";
+import { Tag } from "./app/shared/models/tags";
 
 export const sample_foods: food[] = [
     {
@@ -66,5 +67,49 @@ export const sample_foods: food[] = [
         stars: 4.0,
         imageUrl: 'https://raw.githubusercontent.com/nasirjd/foodmine-course/007095da4fef5c43d1f2f309c4a85b42677405ad/frontend/src/assets/food-6.jpg',
         tags: ['FastFood', 'Pizza', 'Lunch'],
+    },
+    {
+        id: '7',
+        name: 'Chicken Pizza',
+        price: 400,
+        cookTime: '50-60',
+        favorite: true,
+        origins: ['china'],
+        stars: 4.9,
+        imageUrl: 'https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/216054.jpg?resize=1200:*',
+        tags: ['FastFood', 'Pizza', 'Lunch'],
+    },
+    {
+        id: '8',
+        name: 'Gobi Manchurian',
+        price: 150,
+        cookTime: '10-15',
+        favorite: false,
+        origins: ['india'],
+        stars: 4.3,
+        imageUrl: 'https://theyummydelights.com/wp-content/uploads/2020/02/gobi-manchurian-8.jpg',
+        tags: ['FastFood', 'Lunch', 'Fry'],
+    },
+    {
+        id: '9',
+        name: 'Chicken Shawarma',
+        price: 100,
+        cookTime: '10-20',
+        favorite: true,
+        origins: ['india'],
+        stars: 4.9,
+        imageUrl: 'https://www.thechunkychef.com/wp-content/uploads/2021/03/Chicken-Shawarma-recipe-card.jpg',
+        tags: ['FastFood', 'Fry'],
     }
+]
+
+export const sample_tags:Tag[] = [
+    { name: 'All', count: 9 },
+    { name: 'FastFood', count: 7 },
+    { name: 'Pizza', count: 3 },
+    { name: 'Lunch', count: 5 },
+    { name: 'SlowFood', count: 2 },
+    { name: 'Hamburger', count: 1 },
+    { name: 'Fry', count: 3 },
+    { name: 'Soup', count: 1 },
 ]

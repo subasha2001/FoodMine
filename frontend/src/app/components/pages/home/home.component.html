@@ -1,8 +1,9 @@
 <app-search></app-search>
-<ul class="df jcc aic lstn">
+<app-tags></app-tags>
+<ul class="df jcc aic lstn mx-w">
     <li *ngFor="let data of foods">
         <!-- //routerLink="/food/{{data.id}}" -->
-        <a class="pos-rel" >
+        <a routerLink='/food/{{data.id}}' class="pos-rel" >
             <img src={{data.imageUrl}} [alt]="data.name">
             <div class="content">
                 <div class="name">{{data.name}}</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,14 +8,22 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
-export class SearchComponent {
-  searchTerm = ''
+export class SearchComponent implements OnInit {
+  searchTerm = '';
+
+  //private - accessible throught the class, no access specifier - accessible only in constructor
   constructor(activatedRouter:ActivatedRoute, private router: Router){
+    //we read the data from route and display in search box
     activatedRouter.params.subscribe((params)=>{
-      if(params.searchTerm) this.searchTerm = params.searchTerm;
+      if(params['searchTerm'])
+      this.searchTerm = params['searchTerm'];
     });
   }
+  ngOnInit(): void {
+    
+  }
   search(term:string):void{
-    this.router.navigateByUrl('/search' + term);
+    if(term)
+    this.router.navigateByUrl('/search/' + term);
   }
 }

@@ -1,0 +1,85 @@
+.mx-w{
+    align-items: flex-start;
+    margin: 20px;
+    margin-top: 10px;
+}
+ul, .checkout, .checkout>div{
+    flex-direction: column;
+}
+ul{
+    flex: 3 0;
+    justify-content: space-evenly;
+    bottom: 1px solid #ffbbbb;
+    border-radius: 15px;
+    margin: 10px;
+}
+ul li{
+    justify-content: space-around;
+    border-bottom: 1px solid #e4e4e4;
+}
+ul li:last-child{border: none;}
+li img{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 100rem;
+}
+li div:not(:first-child){
+    flex-basis: 18%;
+}
+li select{
+    width: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+li .remove-button{
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    color: #e72929;
+    opacity: 0.7;
+    outline: none;
+}
+li .remove-button:hover{
+    opacity: 1;
+}
+.checkout{
+    flex: 1 3;
+    height: 20rem;
+    border: 1px solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.checkout>div{
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.foods-count{margin-bottom: 1.5rem;}
+.foods-count::before{
+    content: "Count: ";
+    color: grey;
+}
+.total-price::before{
+    content: "Price: ";
+    color: grey;
+}
+.checkout a{
+    padding: 1rem;
+    color: white;
+    background-color: #e72929;
+    display: block;
+    width: 99%;
+    border-radius: 1rem;
+    text-align: center;
+    opacity: 0.7;
+    justify-self: center;
+}
+.checkout a:hover{opacity: 1;cursor: pointer;}

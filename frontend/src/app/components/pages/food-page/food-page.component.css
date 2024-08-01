@@ -1,0 +1,66 @@
+.mx-w{margin: 50px;}
+.mx-w > *{
+    max-width: 400px;
+    margin: 5px;
+}
+img{
+    object-fit: cover;
+    border-radius: 50px;
+}
+span, button, .price{font-size: 20px;}
+.details{
+    flex-direction: column;
+    width: 100%;
+    padding: 30px;
+    color: #000;
+    border: 50px;
+}
+.header .name{
+    font-size: 30px;
+    font-weight: bold;
+}
+.header .favorite{color: #e72929;}
+.header .favorite.not{color: grey;}
+.origins{margin: 5px 0;}
+.origins::before{
+    content: "Origins: ";
+    font-size: 20px;
+    margin-right: 10px;
+    color: #e72929;
+}
+.origins span{
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 30px;
+    background-color: aliceblue;
+}
+.tags a{
+    padding: 3px 10px;
+    margin: 5px 15px 5px 0;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    color: #4a99ff;
+}
+.cook-time{margin-top: 15px;}
+.cook-time span{
+    padding: 8px 30px 8px 0;
+    border-radius: 10px;
+}
+.price{
+    font-size: 24px;
+    margin: 20px 0px;
+    color: #62db62;
+}
+.price::before{
+    content: "Price: ";
+    color: darkgray;
+}
+button{
+    color: white;
+    background-color: #e72929;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    outline: none;
+}
+button:hover{opacity: 0.8;}

@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+body, h1, h2, h3, h4, h5, h6, p, ul, a, li{margin: 0;padding: 0;box-sizing: border-box;}
+.pos-rel{position: relative;}
+.pos-abs{position: absolute;}
+.df{display: flex;}
+.dn{display: none;}
+.jcsb{justify-content: space-between;}
+.jcc{justify-content: center;}
+.aic{align-items: center;}
+.mx-w{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.lstn{list-style-type: none;}
+a{text-decoration: none;}
+.cupo{cursor: pointer;}

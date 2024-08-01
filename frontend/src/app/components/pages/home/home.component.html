@@ -1,0 +1,25 @@
+<app-search></app-search>
+<ul class="df jcc aic lstn">
+    <li *ngFor="let data of foods">
+        <!-- //routerLink="/food/{{data.id}}" -->
+        <a class="pos-rel" >
+            <img src={{data.imageUrl}} [alt]="data.name">
+            <div class="content">
+                <div class="name">{{data.name}}</div>
+            </div>
+            <span class="favorite {{data.favorite?'':'not'}}">❤</span>
+            <div class="product-item-footer jcsb df">
+                <div class="origins">
+                    <span *ngFor="let data of data.origins">{{data}}</span>
+                </div>
+            </div>
+            <div class="cook-time">
+                <span>🕒</span>
+                {{data.cookTime}}
+            </div>
+            <div class="price pos-abs">
+                <span>Rs. {{data.price}}</span>
+            </div>
+        </a>
+    </li>
+</ul>

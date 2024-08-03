@@ -1,5 +1,9 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-page-not-found
+    [visible]="!foods || !foods.length"
+    resetLinkText="Reser Search">
+</app-page-not-found>
 <ul class="df jcc aic lstn mx-w">
     <li *ngFor="let data of foods">
         <!-- //routerLink="/food/{{data.id}}" -->

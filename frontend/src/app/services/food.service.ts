@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { food } from '../shared/models/food';
+import { Food } from '../shared/models/food';
 import { sample_foods, sample_tags } from '../../data';
 import { Tag } from '../shared/models/tags';
 
@@ -9,26 +9,28 @@ import { Tag } from '../shared/models/tags';
 export class FoodService {
 
   constructor() { }
+  //http will not send raw data, it will send observable and we subsccribe to it
+  //after connection to the backend , it will give the result or error
 
-  getAll(): food[] {
+  getAll(): Food[] {
     return sample_foods;
   }
 
   getAllFoodBySearchTerm(searchTerm: string) {
-    return this.getAll().filter(val => val.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return this.getAll().filter(food => food.name.toLowerCase().includes(searchTerm.toLowerCase()));
   }
 
   getAllTags(): Tag[] {
     return sample_tags;
   }
 
-  getAllFoodByTag(tag: string): food[] {
+  getAllFoodByTag(tag: string): Food[] {
     return tag === 'All' ?
     this.getAll() :
     this.getAll().filter(food => food.tags?.includes(tag));
   }
 
-  getFoodById(foodId:string):food{
-    return this.getAll().find(food => food.id == foodId) ?? new food; 
+  getFoodById(foodId:string):Food{
+    return this.getAll().find(food => food.id == foodId) ?? new Food; 
   }
 }

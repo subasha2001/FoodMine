@@ -14,6 +14,7 @@ export class TitleComponent implements OnInit {
   @Input() title! :string;
   @Input() margin? = '15px 0 15px 3px';
   @Input() fontSize? = '20px';
+  @Input() color? = '';
 
   ngOnInit(): void {
     

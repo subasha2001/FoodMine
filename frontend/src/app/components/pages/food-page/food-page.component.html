@@ -1,4 +1,9 @@
-<div class="mx-w df jcc fww aic">
+<app-page-not-found
+    [visible]="!food"
+    notFoundMsg="Food Not Found"
+    resetLinkText="Back to HomePage">
+</app-page-not-found>
+<div *ngIf="food" class="mx-w df jcc fww aic">
     <img [src]="food.imageUrl" [alt]="food.name">
 
     <div class="details df">

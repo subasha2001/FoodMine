@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tags.component.css'
 })
 export class TagsComponent implements OnInit {
-  tags:Tag[];
+  tags?:Tag[];
   constructor(private foodservice:FoodService){
     this.tags = foodservice.getAllTags();
   }

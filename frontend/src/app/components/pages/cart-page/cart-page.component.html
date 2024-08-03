@@ -1,21 +1,24 @@
-<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
-<div class="mx-w df fww">
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem" color="#616161"></app-title>
+<app-page-not-found [visible]="!cart || !cart.items.length" notFoundMsg="Cart Page Is Empty"
+    resetLinkText="Go To HomePage">
+</app-page-not-found>
+<div class="mx-w df fww" *ngIf="cart && cart.items.length">
     <ul class="df lstn">
         <li *ngFor="let data of cart.items" class="df aic fww">
-            <div><img [src]="data.food.imageUrl" [alt]="data.food.name"></div>
-            <div><a routerLink="/food/{{data.food.id}}">{{data.food.name}}</a></div>
+            <div><img [src]="data.food?.imageUrl" [alt]="data.food?.name"></div>
+            <div><a routerLink="/food/{{data.food?.id}}" routerLinkActive="active"
+                    ariaCurrentWhenActive="page">{{data.food?.name}}
+                </a></div>
             <div>
-                <select #quantitySelect 
-                [value]="data.quantity" 
-                (change)="changeQuantity(data, quantitySelect.value)">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <select #quantitySelect [value]="data.quantity" (change)="changeQuantity(data, quantitySelect.value)">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </select>
             </div>
-            <div>Rs. {{data.price}}</div>
+            <div>Rs. {{data.food?.price}}</div>
             <div><button class="cupo remove-button" (click)="removeFromCart(data)">Remove</button></div>
         </li>
     </ul>
@@ -25,5 +28,6 @@
             <div class="total-price">Rs. {{cart.totalPrice}}</div>
         </div>
         <a routerLink="/checkout">Proceed to Checkout</a>
+        <a routerLink="/">Back to Home</a>
     </div>
 </div>

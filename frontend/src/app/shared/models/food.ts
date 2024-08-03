@@ -1,4 +1,4 @@
-export class food{
+export class Food{
     id!:string;
     name!:string;
     price!:number;        // !   -->    this is a required field in the form

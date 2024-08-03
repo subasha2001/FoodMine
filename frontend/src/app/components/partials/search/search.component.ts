@@ -15,8 +15,8 @@ export class SearchComponent implements OnInit {
   constructor(activatedRouter:ActivatedRoute, private router: Router){
     //we read the data from route and display in search box
     activatedRouter.params.subscribe((params)=>{
-      if(params['searchTerm'])
-      this.searchTerm = params['searchTerm'];
+      if(params.searchTerm)
+      this.searchTerm = params.searchTerm;
     });
   }
   ngOnInit(): void {

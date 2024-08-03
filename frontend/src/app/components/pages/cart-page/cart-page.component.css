@@ -3,9 +3,7 @@
     margin: 20px;
     margin-top: 10px;
 }
-ul, .checkout, .checkout>div{
-    flex-direction: column;
-}
+ul, .checkout, .checkout>div{flex-direction: column;}
 ul{
     flex: 3 0;
     justify-content: space-evenly;

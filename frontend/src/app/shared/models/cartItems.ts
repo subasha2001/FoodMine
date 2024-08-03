@@ -1,8 +1,8 @@
-import { food } from "./food";
+import { Food } from "./food";
 
-export class CartItem{
-    food!:food;
-    constructor(food:food){}
+export class CartItem {
+    //constructor gets food as the input here//
+    constructor(public food: Food) {
+    }
     quantity: number = 1;
-    price: number = this.food.price;
 }

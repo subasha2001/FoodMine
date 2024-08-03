@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { food } from '../../../shared/models/food';
+import { Food } from '../../../shared/models/food';
 import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
 import { FoodService } from '../../../services/food.service';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../../services/cart.service';
+import { PageNotFoundComponent } from '../../partials/page-not-found/page-not-found.component';
 
 @Component({
   selector: 'app-food-page',
   standalone: true,
-  imports: [RouterLink, CommonModule, RouterModule],
+  imports: [RouterLink, CommonModule, RouterModule, PageNotFoundComponent],
   templateUrl: './food-page.component.html',
   styleUrl: './food-page.component.css'
 })
 export class FoodPageComponent implements OnInit {
-  food!: food;
+  food!: Food;
   constructor(
     activatedRoute: ActivatedRoute, 
     private foodservice: FoodService, 
@@ -21,16 +22,15 @@ export class FoodPageComponent implements OnInit {
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
-      if (params['id'])
-        this.food = this.foodservice.getFoodById(params['id']);
+      if (params.id)
+        this.food = this.foodservice.getFoodById(params.id);
+      //we cant directly send it to foods we have to subscribe to it
     })
   }
   ngOnInit(): void {
 
   }
   addToCart(){
-    console.log('Clicked');
-    
     this.cartservice.addToCart(this.food);
     this.router.navigateByUrl('/cart-page');
   }

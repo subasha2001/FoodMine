@@ -23,8 +23,8 @@ login(userLogin:IUserLogin):Observable<User>{
   //using interface we cannot create a new object
   //but with a class we can create a new object
   return this.http.post<User>(USERS_LOGIN_URL, userLogin).pipe(
-    tap({
-      next:(user)=>{
+    tap({            //used to perform side effects for notification
+      next:(user)=>{ //success notification
         this.setUserToLocalStorage(user)
         this.userSubject.next(user);
         this.toastr.success(
@@ -32,7 +32,7 @@ login(userLogin:IUserLogin):Observable<User>{
           'Login Successful'
         )
       },
-      error:(errorResponse)=>{
+      error:(errorResponse)=>{ //failed notification
         this.toastr.error(errorResponse.error, 'Login Failed')
       }
     })

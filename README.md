@@ -99,3 +99,14 @@
     2. Input Validation
     3. Text Input
     4. Default Button
+14. Connect Login Api to MongoDB Atlas
+    1. Moving Apis into routers
+    2. Create MongoDB Atlas
+    3. Create .env file
+    4. Install   //we are creating these for .env file
+        1. mongoose  //for creating models, we cannot directly access mongodb
+        2. dotenv
+        3. dcryptjs //for saving passwords into db, indirectly saving
+        4. express-async-handler
+    5. Connect to MongoDB Atlas
+    6. Use MongoDB instead of data.ts in apis

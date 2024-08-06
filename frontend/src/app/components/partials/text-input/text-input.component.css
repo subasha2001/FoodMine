@@ -2,14 +2,14 @@ input{
     height: 88%;
     border: none;
     border-bottom: 0 solid gray;
-    transition: all 0.15s ease-out;
+    transition: all 0.1s linear;
     background-color: white;
     font-size: 1.1rem;
     outline: none;
 }
 input::placeholder{color: #dfdfdf;font-size: 0.95rem;}
 input:focus{
-    border-width: 2.9px;
+    border-bottom: 2px solid grey; 
 }
 input-validation{
     top: 0;

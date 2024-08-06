@@ -3,13 +3,13 @@
         <a routerLink="/" class="logo">Food Mine</a>
         <nav>
             <ul class="df lstn">
-                <li><a routerLink="/login">Login</a></li>
-                <li class="menu-container pos-rel">
-                    <a routerLink="/login">John</a>
+                <li *ngIf="!isAuth"><a routerLink="/login-page">Login</a></li>
+                <li class="menu-container pos-rel" *ngIf="isAuth">
+                    <a routerLink="/login">{{user.name}}</a>
                     <div class="menu dn pos-abs">
                         <a routerLink="/profile">Profile</a>
                         <a routerLink="/orders">Orders</a>
-                        <a>Logout</a>
+                        <a href="" (click)="logout()">Logout</a>
                     </div>
                 </li>
                 <li>

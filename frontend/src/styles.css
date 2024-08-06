@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
-body, h1, h2, h3, h4, h5, h6, p, ul, a, li{margin: 0;padding: 0;box-sizing: border-box;}
+body, h1, h2, h3, h4, h5, h6, p, ul, a, li{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand';
+}
+
 .pos-rel{position: relative;}
 .pos-abs{position: absolute;}
 .df{display: flex;}
@@ -10,10 +16,11 @@ body, h1, h2, h3, h4, h5, h6, p, ul, a, li{margin: 0;padding: 0;box-sizing: bord
 .aic{align-items: center;}
 .fdc{flex-direction: column;}
 .fww{flex-wrap: wrap;}
-.mx-w{
-    max-width: 1280px;
-    margin: 0 auto;
-}
+.tac{text-align: center;}
+.mx-w{max-width: 1280px;margin: 0 auto;}
+.m-auto{margin: 0 auto;}
+img, input{width: 100%;}
+.w100{width: 100%}
 .lstn{list-style-type: none;}
 a{text-decoration: none;}
 .cupo{cursor: pointer;}

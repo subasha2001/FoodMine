@@ -1,0 +1,13 @@
+<div class="mx-w df jcc w100">
+    <button 
+    [ngStyle]="{ 
+        color:color,
+        'background-color':bgColor,
+        'font-size.rem':fontSize,
+        'width.rem':width
+    }"
+    [type]="type"
+    (click)="onClick.emit()">
+    {{text}}
+    </button>
+</div>

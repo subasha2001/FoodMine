@@ -7,11 +7,13 @@ ul, .checkout, .checkout>div{flex-direction: column;}
 ul{
     flex: 3 0;
     justify-content: space-evenly;
-    bottom: 1px solid #ffbbbb;
+    border: 1px solid #ffbbbb;
     border-radius: 15px;
     margin: 10px;
+    padding: 10px;
 }
 ul li{
+    padding: 5px 0;
     justify-content: space-around;
     border-bottom: 1px solid #e4e4e4;
 }
@@ -80,4 +82,5 @@ li .remove-button:hover{
     opacity: 0.7;
     justify-self: center;
 }
+.checkout a:last-child{margin-top: 10px;}
 .checkout a:hover{opacity: 1;cursor: pointer;}

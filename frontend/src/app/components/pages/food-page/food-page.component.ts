@@ -16,21 +16,23 @@ import { PageNotFoundComponent } from '../../partials/page-not-found/page-not-fo
 export class FoodPageComponent implements OnInit {
   food!: Food;
   constructor(
-    activatedRoute: ActivatedRoute, 
-    private foodservice: FoodService, 
+    activatedRoute: ActivatedRoute,
+    private foodservice: FoodService,
     private cartservice: CartService,
     private router: Router
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params.id)
-        this.food = this.foodservice.getFoodById(params.id);
+        this.foodservice.getFoodById(params.id).subscribe(serverFoods => {
+          this.food = serverFoods;
+        })
       //we cant directly send it to foods we have to subscribe to it
     })
   }
   ngOnInit(): void {
 
   }
-  addToCart(){
+  addToCart() {
     this.cartservice.addToCart(this.food);
     this.router.navigateByUrl('/cart-page');
   }

@@ -16,6 +16,14 @@
                 label="Password">
             </text-input>
             <default-button text="Login"></default-button>
+            <div class="register df aic jcc">
+                New user? &nbsp;
+                <a routerLink="/register-page" [queryParams]="{returnUrl: returnUrl}">
+                    Register Here
+                </a>
+                <!-- for queryParams we should import RouterLink -->
+                <!-- nbsp - html special character: used for putting space -->
+            </div>
         </form>
     </div>
 </div>

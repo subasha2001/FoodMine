@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { LoadingComponent } from './components/partials/loading/loading.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
     HeaderComponent,
     HomeComponent,
     HttpClientModule,
-    ToastrModule
+    ToastrModule,
+    LoadingComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

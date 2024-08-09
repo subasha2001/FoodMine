@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms'
 import { TitleComponent } from '../../partials/title/title.component';
-import { CommonModule } from '@angular/common';
-import { ToastrModule } from 'ngx-toastr'
 import { UserService } from '../../../services/user.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TextInputComponent } from '../../partials/text-input/text-input.component';
 import { DefaultButtonComponent } from '../../partials/default-button/default-button.component';
 
@@ -13,11 +11,10 @@ import { DefaultButtonComponent } from '../../partials/default-button/default-bu
   standalone: true,
   imports: [
     ReactiveFormsModule, 
-    TitleComponent, 
-    CommonModule, 
-    ToastrModule,
+    TitleComponent,
     TextInputComponent,
-    DefaultButtonComponent
+    DefaultButtonComponent,
+    RouterLink
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
@@ -39,7 +36,7 @@ export class LoginPageComponent implements OnInit{
       password:['',[Validators.required]]
     });
 
-    this.returnUrl = this.actRouts.snapshot.queryParams.returnUrl
+    this.returnUrl = this.actRouts.snapshot.queryParams.returnUrl;
     //snapshot - the latest value of the activatedRoute
     //queryParams are the everything after the question mark
     //we get the return url each we come into the login component

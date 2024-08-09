@@ -21,6 +21,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, a, li{
 .m-auto{margin: 0 auto;}
 img, input{width: 100%;}
 .w100{width: 100%}
+.h100{height: 100%;}
 .lstn{list-style-type: none;}
 a{text-decoration: none;}
 .cupo{cursor: pointer;}

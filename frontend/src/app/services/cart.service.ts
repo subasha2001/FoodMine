@@ -49,6 +49,10 @@ export class CartService {
     return this.cartSubject.asObservable();
     //we use observables bcoz we can change the value of subject outside the service
   }
+  getCart(): Cart{
+    return this.cartSubject.value;
+    //subject always keeps the latest values
+  }
 
   //getting and setting cart to the local storage
 

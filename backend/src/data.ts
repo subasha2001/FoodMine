@@ -14,7 +14,7 @@ export const sample_foods: any[] = [
     {
         id: '2',
         name: 'Meatball',
-        price: 500,
+        price: 200,
         cookTime: '20-30',
         favorite: true,
         origins: ['persia', 'middle east', 'china'],

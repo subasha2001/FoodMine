@@ -1,0 +1,7 @@
+<div class="mx-w pos-rel tac">
+    <button *ngIf="!readonly" class="find-location pos-abs t0 l0 r0 mauto cupo" (click)="findMyLocation()">
+        Find My Location
+    </button>
+    <div #map class="w100 h100"></div> 
+    <!-- #map - placeholder for map, it is an anglar sntax, can be accessed from ts file also -->
+</div>

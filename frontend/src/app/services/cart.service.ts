@@ -20,7 +20,9 @@ export class CartService {
   addToCart(food: Food):void {
     let cartItem = this.cart.items
       .find(item => item.food.id == food.id);
-    if (cartItem) return;                          //if this food is already present we stop this process here 
+    if (cartItem) 
+      return;                          //if this food is already present we stop this process here 
+
     this.cart.items.push(new CartItem(food));      //otherwish continue
     this.setCartToLocalStorage();
   }
@@ -36,7 +38,7 @@ export class CartService {
     if (!cartItem) return;    //if this food is not here, we stop this process here
 
     cartItem.quantity = quantity;
-    cartItem.food.price = quantity * cartItem.food.price;
+    cartItem.price = quantity * cartItem.food.price;
     this.setCartToLocalStorage();
   }
 
@@ -79,5 +81,6 @@ export class CartService {
     const cartJson = localStorage.getItem('Cart');
     return cartJson ? JSON.parse(cartJson) : new Cart();
     //parse - to convert it to cartJson object else convert it to new Cart()
+    // : - otherwise,  ? - is present
   }
 }

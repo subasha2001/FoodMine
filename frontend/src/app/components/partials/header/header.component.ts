@@ -26,7 +26,7 @@ export class HeaderComponent {
   }
 
   logout(){
-    this.userService.logout;
+    this.userService.logout();
   }
   get isAuth(){
     return this.user.name;

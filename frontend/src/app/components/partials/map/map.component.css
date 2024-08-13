@@ -1,0 +1,14 @@
+.mx-w{
+    width: 35rem;
+    height: 22rem;
+}
+.find-location{
+    width: 15rem;
+    min-height: 3rem;
+    font-size: 1.2rem;
+    z-index: 1000;
+    background-color: #ffffff7c;
+}
+.find-location:hover{
+    background-color: white;
+}

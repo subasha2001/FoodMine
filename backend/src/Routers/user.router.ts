@@ -23,9 +23,12 @@ router.get('/seed', asyncHandler(
 ));
 router.post('/login', asyncHandler(
     async (req, res)=>{  //we can send the body to the server
-        const {email, password} = req.body
-        const user = await UserModel.findOne({email, password})
-    
+        const {email, password} = req.body   //destructuring assignment
+        const user = await UserModel.findOne({email, password});
+            //token - encrypted text, sent to the client and to be saved there
+            //and the client should send it with each request and the server 
+            //decrypt it and understand which user is doing that req
+            // for authentication and authorization
         if(user){
             res.send(generateTokenResponse(user));
         }else{
@@ -62,16 +65,24 @@ router.post('/register', asyncHandler(
     }
 ))
 
-
-const generateTokenResponse = (user:any)=>{
-    const token =jwt.sign({                      //process of generating token is sign
-        email:user.email, isAdmin: user.isAdmin  //first parameter is payload or what we want to encode 
-    }, "SomeRandomText", {                       //second parameter is of sign fn(pass secrete key in emv file)
-        expiresIn: '30d'                         //last parameter is the options
+//we need jwt to generate a token
+const generateTokenResponse = (user:User)=>{
+    const token =jwt.sign({                 //process of generating token is sign
+        id: user.id, 
+        email:user.email, 
+        isAdmin: user.isAdmin               //first parameter is payload or what we want to encode 
+    }, process.env.JWT_SECRET!, {           //second parameter is of sign fn(pass secrete key in emv file)
+        expiresIn: '30d'                    //last parameter is the options
     });   
     
-    user.token = token;
-    return user;
+    return {
+        id:  user.id,
+        email: user.email,
+        name: user.name,
+        address: user.address,
+        isAdmin: user.isAdmin,
+        token: token
+    };
 }
 
 export default router;

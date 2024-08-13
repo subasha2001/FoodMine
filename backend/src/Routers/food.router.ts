@@ -24,6 +24,7 @@ router.get('/seed', asyncHandler(
 router.get('/', asyncHandler(
     async (req, res) => {
         const foods = await FoodModel.find();
+        //find without parameters is all the values
         res.send(foods);
     }
 ));

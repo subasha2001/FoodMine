@@ -5,6 +5,7 @@ import express from "express"
 import cors from "cors"  //we use cors to run backend in different port(localhost:5000)
 import foodRouter from './Routers/food.router'
 import userRouter from "./Routers/user.router";
+import orderRouter from './Routers/order.router'
 import { dbConnect } from './configs/database.config';
 dbConnect();
 
@@ -19,6 +20,7 @@ app.use(cors({          //express says cors to have a req on this server and cre
 
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 //here the express will move the req into the foodRouter
 
 const port = 5000;

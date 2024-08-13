@@ -5,6 +5,9 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { AuthGuard } from './auth/guards/auth.guard';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 export const routes: Routes = [
     {component:HomeComponent, path: ''},
@@ -14,5 +17,7 @@ export const routes: Routes = [
     {path: 'cart-page', component: CartPageComponent},
     {path: 'login-page', component: LoginPageComponent},
     {path: 'register-page', component: RegisterPageComponent},
-    {path: 'checkout-page', component: CheckoutPageComponent}
+    {path: 'checkout-page', component: CheckoutPageComponent, canActivate:[AuthGuard]},
+    {path: 'payment-page', component: PaymentPageComponent, canActivate:[AuthGuard]},
+    {path: 'track-page/:orderId', component: OrderTrackPageComponent, canActivate:[AuthGuard]}
 ];

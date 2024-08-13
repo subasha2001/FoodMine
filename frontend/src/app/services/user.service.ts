@@ -21,14 +21,14 @@ export class UserService {
   }
 
   public get currentUser(): User {
-    return this.userSubject.value
+    return this.userSubject.value;
   }
 
   login(userLogin: IUserLogin): Observable<User> {
     //using interface we cannot create a new object
     //but with a class we can create a new object
     return this.http.post<User>(USERS_LOGIN_URL, userLogin).pipe(
-      tap({            //used to perform side effects for notification
+      tap({               //used to perform side effects for notification
         next: (user) => { //success notification
           this.setUserToLocalStorage(user)
           this.userSubject.next(user);
@@ -72,8 +72,8 @@ export class UserService {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
   private getUserFromLocalStorage(): User {
-    const userJson = localStorage.getItem(USER_KEY)  //json representation of our object
-    if (userJson) return JSON.parse(userJson) as User
+    const userJson = localStorage.getItem(USER_KEY);  //json representation of our object
+    if (userJson) return JSON.parse(userJson) as User;
     return new User()
     //we parse this json and convert it into user object - userJson should be present
   }

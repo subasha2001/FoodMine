@@ -39,7 +39,7 @@ export const FoodSchema = new Schema<Food>(
 )
 //for the id to be available we need virtuals
 //virtuals are values that are not saved in the data base, 
-//  will be generated based on the values in the db
+//will be generated based on the values in the db
 
 export const FoodModel = model<Food>('food', FoodSchema)//'food' - name of the model
 // now we can all create, update and delete operations to the db

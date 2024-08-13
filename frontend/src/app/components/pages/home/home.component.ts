@@ -25,11 +25,12 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   foods: Food[] = [];
-  constructor(private foodService: FoodService, private activatedRoute: ActivatedRoute) {      //activated -- to listen to the routes
+  constructor(private foodService: FoodService, private activatedRoute: ActivatedRoute) {      
+    //activated -- to listen to the routes
     let foodsObservable: Observable<Food[]>;
     activatedRoute.params.subscribe((params) => {       //params changes calls the fn in subscribe
-      let foodsObservable: Observable<Food[]>; //to get observables of these values - line 32,34,36
-      if (params.searchTerm)          //already has a searchTerm property
+      let foodsObservable: Observable<Food[]>;          //to get observables of these values - line 32,34,36
+      if (params.searchTerm)                            //already has a searchTerm property
         foodsObservable = this.foodService.getAllFoodBySearchTerm(params.searchTerm);
       else if (params.tag)
         foodsObservable = this.foodService.getAllFoodByTag(params.tag);

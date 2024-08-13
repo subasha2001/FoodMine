@@ -1,12 +1,42 @@
-import { HttpInterceptorFn } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor,
+  HttpEventType
+} from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 import { LoadingService } from '../../services/loading.service';
 
-// export class LoadingInterceptor {
-//   constructor(public loadingservice: LoadingService){}
-// }
 var pendingRequests = 0;
-export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
-  const loadingservice = LoadingService;
-  // loadingservice.showLoading();
-  return next(req);
-};
+
+@Injectable()
+export class LoadingInterceptor implements HttpInterceptor {
+
+  constructor(private loadingService: LoadingService) {}
+
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    this.loadingService.showLoading();
+    pendingRequests = pendingRequests + 1;
+
+    return next.handle(request).pipe(
+      tap({
+        next:(event) => {
+          if(event.type === HttpEventType.Response){
+            this.handleHideLoading();
+          }
+        },
+        error: (_) => {
+          this.handleHideLoading();
+        }
+      })
+    );
+  }
+
+  handleHideLoading(){
+    pendingRequests = pendingRequests - 1;
+    if(pendingRequests === 0)
+    this.loadingService.hideLoading();
+  }
+}

@@ -6,13 +6,15 @@
 </app-page-not-found>
 <ul class="df jcc aic lstn mx-w">
     <li *ngFor="let data of foods">
-        <!-- //routerLink="/food/{{data.id}}" -->
         <a routerLink='/food/{{data.id}}' class="pos-rel" >
             <img src={{data.imageUrl}} [alt]="data.name">
             <div class="content">
                 <div class="name">{{data.name}}</div>
             </div>
             <span class="favorite {{data.favorite?'':'not'}}">❤</span>
+            <div class="stars">
+                <star-rating [stars]="data.stars"></star-rating>
+            </div>
             <div class="product-item-footer jcsb df">
                 <div class="origins">
                     <span *ngFor="let data of data.origins">{{data}}</span>

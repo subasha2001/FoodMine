@@ -36,7 +36,7 @@ export class MapComponent implements OnChanges{
     if(!this.order) return;
     this.initializeMap()
     
-    if(this.readonly){
+    if(this.readonly && this.addressLatLng){
       this.addressLatLng;
       this.showLocationOnReadonlyMode();
     }
@@ -45,8 +45,6 @@ export class MapComponent implements OnChanges{
     const m = this.map;
     this.setMarker(this.addressLatLng);
     m.setView(this.addressLatLng, this.MARKER_ZOOM_LEVEL);
-    
-    console.log(m);
     
     m.dragging.disable();
     m.touchZoom.disable();

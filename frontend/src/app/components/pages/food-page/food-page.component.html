@@ -13,16 +13,9 @@
             </span>
             <span class="favorite {{food.favorite? '': 'not'}}">❤</span>
         </div>
-        <!-- <div class="rating">
-                <star-rating 
-                [value]="food.stars"
-                [totalstars]="5"
-                checkedcolor="red"
-                uncheckedcolor="black"
-                size="25px"
-                [readonly]="true">
-                </star-rating>
-            </div> -->
+        <div class="ratings">
+            <star-rating [stars]="food.stars" [size]="1.8"></star-rating>
+        </div>
         <div class="origins df fww aic">
             <span *ngFor="let data of food.origins">
                 {{data}}

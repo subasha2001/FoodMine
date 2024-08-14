@@ -13,7 +13,6 @@ export class LocationService {
       //if any changes here observer informs the Observable
       if (!navigator.geolocation) return    //navigator - part of js
 
-      
       return navigator.geolocation.getCurrentPosition(
         (pos) => {
           observer.next({

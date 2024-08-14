@@ -7,6 +7,7 @@ import { SearchComponent } from '../../partials/search/search.component';
 import { TagsComponent } from '../../partials/tags/tags.component';
 import { PageNotFoundComponent } from '../../partials/page-not-found/page-not-found.component';
 import { Observable } from 'rxjs';
+import { StarRatingComponent } from '../../partials/star-rating/star-rating.component';
 
 
 @Component({
@@ -17,7 +18,8 @@ import { Observable } from 'rxjs';
     SearchComponent,
     TagsComponent,
     RouterLink,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StarRatingComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

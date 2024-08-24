@@ -54,7 +54,7 @@ export class MapComponent implements OnChanges{
     m.keyboard.disable();
     m.off('click');
     m.tap?.disable();
-    this.currentMarker.dragging?.disable;
+    this.currentMarker.dragging?.disable();
   }
 
   initializeMap(){

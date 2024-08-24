@@ -23,7 +23,7 @@ a span{
     font-size: 0.9rem;
 }
 .menu{
-    z-index: 1;
+    z-index: 10;
     background-color: whitesmoke;
 }
 .menu-container:hover .menu{display: block !important;}

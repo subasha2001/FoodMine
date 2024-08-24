@@ -1,11 +1,11 @@
+import { inject } from "@angular/core";
 import { Food } from "./food";
 
 export class CartItem {
     //constructor gets food as the input here//
-    constructor(public foodd: Food) {
-        this.food = foodd;
+    constructor(public food:Food) {
+        this.price = food.price;
     }
-    food!:Food;
     quantity: number = 1;
-    price: number = this.food?.price;
+    price: number = 0;
 }

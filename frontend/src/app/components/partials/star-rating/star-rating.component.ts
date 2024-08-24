@@ -27,7 +27,6 @@ export class StarRatingComponent {
     : this.stars >= previousHalf
     ? 'star-half'
     : 'star-empty';
-    // return `/assets/stars/${imageName}.svg`
-    return `https://raw.githubusercontent.com/nasirjd/foodmine-course/74edc91af674881f9f8a436618b6b2e7ea1e50ef/frontend/src/assets/stars/${imageName}.svg`;  
+    return `/assets/stars/${imageName}.png`;  
   }
 }

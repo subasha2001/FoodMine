@@ -53,7 +53,6 @@ export class RegisterPageComponent implements OnInit {
   }
 
   submit() {
-    console.log('clicked');
     this.isSubmitted = true;
     if (this.registerForm.invalid) return;
 

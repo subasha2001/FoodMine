@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
-dotenv.config(); //before configuring we should check MONGO_URL is present or not
+dotenv.config(); 
+//before configuring we should check MONGO_URL is present or not
 
 import express from "express"
 import cors from "cors"  //we use cors to run backend in different port(localhost:5000)
@@ -21,7 +22,7 @@ app.use(cors({          //express says cors to have a req on this server and cre
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
-//here the express will move the req into the foodRouter
+//here the express will move the req into the router
 
 const port = 5000;
 

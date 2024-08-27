@@ -98,6 +98,17 @@ export const sample_foods: any[] = [
         stars: 4.9,
         imageUrl: 'https://www.thechunkychef.com/wp-content/uploads/2021/03/Chicken-Shawarma-recipe-card.jpg',
         tags: ['FastFood', 'Fry'],
+    },
+    {
+        id: '10',
+        name: 'Chicken Peri Peri Shawarma',
+        price: 110,
+        cookTime: '10-20',
+        favorite: true,
+        origins: ['india'],
+        stars: 4.8,
+        imageUrl: 'https://www.thechunkychef.com/wp-content/uploads/2021/03/Chicken-Shawarma-recipe-card.jpg',
+        tags: ['FastFood', 'Fry'],
     }
 ]
 

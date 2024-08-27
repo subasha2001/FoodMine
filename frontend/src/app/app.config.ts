@@ -9,6 +9,7 @@ import { authInterceptor } from './auth/auth.interceptor';
 import { LoadingService } from './services/loading.service';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
